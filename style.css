@@ -1,0 +1,162 @@
+/* Global View aka Desktop View */
+
+body {
+    font-family: 'Proza Libre', sans-serif; 
+    background-color: rgb(206, 246, 250);
+    color: white;
+}
+
+ a {
+color: white;
+text-decoration: none;
+ }
+
+.container {
+    min-height: 500px;
+    max-width: 1024;
+    margin: 0 auto; /*centers element on screen*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 140px; /*spaces fixed nav*/
+}
+
+ .header-container {
+background-color: rgba(2, 1, 66, 0.623);
+min-height: 100px;
+position: fixed; /*fixed nav*/
+width: 100%;
+ }
+ 
+ header {
+     max-width: 1024px;
+     /* background-color: mediumorchid; */
+     min-height: 100px;
+     margin: 0 auto; 
+     display: flex;
+     justify-content: space-between;
+     align-items: center; /*centers items vertically*/
+ }
+
+.col {
+    width: 30%;
+    margin-bottom: 40px;
+    background-image: linear-gradient( rgb(146, 250, 28),rgb(135, 165, 248));
+}
+
+.col p {
+    font-size: 0.825rem;
+    padding: 20px 25px;
+    line-height: 1.25rem;
+}
+
+.hide-desktop-only {
+    display: none;
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+}
+
+.col p::first-line{
+    font-weight: 700px;
+}
+
+.mybutton {
+    padding: 10px 25px;
+    border-style: solid;
+    border-width: 1px;
+    margin-left: 20px;
+}
+
+.highlight {
+    font-weight: 900px; /*span tag*/
+}
+
+.mob-wrapper {
+    display: none;
+}
+
+
+/* Tablet View */
+@media (max-width: 786px) {
+
+    .col {
+        width: 47%
+    }
+
+    .hide-desktop-only {
+        display: block;
+    }
+
+    .header-container {
+        position: relative; /*overrides fixed in desktop media query*/
+
+    }
+
+    .container {
+        padding-top: 40px; 
+    }
+
+    /*original design, not used with burger menu
+    header {
+        display: block; overrides flex in desktop media query
+        text-align: center;
+    } 
+*/
+
+    nav {
+        display: none;
+    }
+
+    nav a {
+        display: block;
+  
+    }
+
+    .logo {
+        padding: 40px 0;
+    }
+
+    .mybutton {
+        margin-left: 0;
+
+    }
+
+    .mob-wrapper {
+        display: block;
+        padding-right: 30px;
+    }
+
+    .mob-nav {
+        display: none;
+        position: absolute; /*  only acknowledge parent(mob-wrapper)fixes nav in place when on click buttons*/
+        padding-top: 10px;
+    }
+
+    .navbutton{
+        display: block;
+        background-color: coral;
+        padding: 15px 30px;
+        margin-left: -70px; /*spaces against mob-nav position absolute*/
+        text-align: center;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 400px) {
+
+    .col {
+        width: 100%;
+
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+   
+}
+            
+ 
+
